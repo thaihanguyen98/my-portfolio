@@ -39,7 +39,8 @@ a {
   gap: 20px;
 }
 
-section {
+section,
+.section {
   padding: 10px 0;
 }
 
