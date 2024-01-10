@@ -11,8 +11,28 @@ body {
 .container {
   max-width: 1440px;
   margin: auto;
-  padding: 0 20px;
+  padding: 0 40px;
 }
+section {
+  padding: 10px 0;
+}
+.breadcrumb {
+  padding: 40px 0 20px;
+}
+
+.breadcrumb a {
+  color: #4a5264;
+}
+
+.breadcrumb h4 {
+  display: inline;
+  margin-left: 5px;
+}
+
+.breadcrumb h4:hover {
+  text-decoration: underline;
+}
+
 a {
   text-decoration: none;
 }
@@ -24,6 +44,7 @@ h1 {
   font-size: 36px;
   font-weight: 600;
   line-height: 1;
+  margin: 0;
 }
 
 h2 {
@@ -50,14 +71,23 @@ li {
   gap: 20px;
 }
 
+footer {
+  padding: 10px 0;
+}
+
+footer h3 {
+  margin: 10px 0 0;
+}
+
 footer p {
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
-  padding-top: 16px;
+  margin: 10px;
 }
 
 img {
-  width: 350px;
+  width: 100%;
+  height: auto;
 }
 
 .work-enquiry {
@@ -133,5 +163,25 @@ img {
 @media (max-width: 960px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: 0;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  h3,
+  p,
+  li {
+    font-size: 16px;
+  }
+
+  .breadcrumb {
+    padding: 40px 0 10px;
+  }
+
+  footer p {
+    margin: 0 10px 10px;
   }
 }

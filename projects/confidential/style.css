@@ -7,10 +7,48 @@ body {
   box-sizing: border-box;
 }
 
+.breadcrumb {
+  padding: 40px 0 20px;
+}
+
+.breadcrumb a {
+  color: #4a5264;
+}
+
+.breadcrumb h4 {
+  display: inline;
+  margin-left: 5px;
+}
+
+.breadcrumb h4:hover {
+  text-decoration: underline;
+}
+
 .container {
   max-width: 1440px;
   margin: auto;
+  padding: 0 40px;
 }
+section,
+.section {
+  padding: 10px 0;
+}
+h1 {
+  font-size: 32px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 18px;
+}
+
+p,
+li {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
 a {
   text-decoration: none;
 }
@@ -22,17 +60,22 @@ a {
 }
 
 footer {
-  padding: 20px;
+  padding: 10px 0;
+}
+
+footer h3 {
+  margin: 10px 0 0;
 }
 
 footer p {
-  font-size: 12px;
+  font-size: 16px;
   text-align: center;
-  padding-top: 16px;
+  margin: 10px;
 }
 
 img {
-  width: 350px;
+  width: 25%;
+  height: auto;
 }
 
 .work-enquiry {
@@ -104,4 +147,30 @@ img {
   background-color: #f6f0e9;
   border: 1px solid black;
   border-radius: 0;
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  h3,
+  p,
+  li {
+    font-size: 16px;
+  }
+
+  .breadcrumb {
+    padding: 40px 0 10px;
+  }
+
+  footer p {
+    margin: 0 10px 10px;
+  }
 }
