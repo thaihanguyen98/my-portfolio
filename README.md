@@ -10,3 +10,12 @@
   <li>Bootstrap</li>
   <li>Font Awesome</li>
 </ul>
+
+# My Work
+<ul>
+  <li>AI Poem Generator</li>
+  <li>Portfolio</li>
+  <li>Weather App</li>
+  <li>Paris Travel Blog</li>
+  <li>World Clock</li>
+</ul>
