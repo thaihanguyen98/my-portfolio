@@ -9,10 +9,13 @@
   <li>CSS</li>
   <li>Bootstrap</li>
   <li>Font Awesome</li>
+  <li>Reactjs</li>
+  <li>Webpack</li>
+  <li>API Integration</li>
 </ul>
 
 # My Work
-<h3>Front-end Web Development</h3>h3>
+<h3>Front-end Web Development</h3>
 <ul>
   <li>AI Poem Generator</li>
   <li>Portfolio</li>
