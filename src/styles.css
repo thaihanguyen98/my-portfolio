@@ -21,7 +21,7 @@ body {
   margin: 0;
   height: 100vh; /* Full viewport height */
   display: flex;
-  background-image: url(./images/bg.jpg);
+  background-image: url(./bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -81,7 +81,7 @@ h2 {
 }
 
 .list {
-  font-family: "BN_Bergen_StLight";
+  font-family: "BN_Bergen_StMedium";
   padding: 8px;
   margin: 0 15px;
   text-transform: uppercase;
