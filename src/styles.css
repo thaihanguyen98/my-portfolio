@@ -1,324 +1,115 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f8fafb;
+@font-face {
+  font-family: "BN_Bergen_StBlack"; /* Use a more standard naming convention */
+  src: url("./fonts/bnbergenst-black-webfont.woff2") format("woff2"),
+    url("./fonts/bnbergenst-black-webfont.woff") format("woff");
+  font-weight: normal; /* Adjusted to represent 'black' weight */
+  font-style: normal; /* Style is set to normal */
 }
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-}
-
-h1,
-h2,
-h3,
-h4,
-p {
-  margin-top: 0;
-  margin-bottom: 10px;
+@font-face {
+  font-family: "BN_Bergen_StMedium"; /* Use a more standard naming convention */
+  src: url("./fonts/bnbergenst-medium-webfont.woff2") format("woff2"),
+    url("./fonts/bnbergenst-medium-webfont.woff") format("woff");
+  font-weight: normal; /* Adjusted to represent 'black' weight */
+  font-style: normal; /* Style is set to normal */
 }
 
-header {
-  padding: 0 60px;
-}
-
-header h1 {
-  font-size: 32px;
-  font-size: bold;
-}
-ul {
-  list-style: none;
-  padding: 0;
+* {
   margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  height: 100vh; /* Full viewport height */
   display: flex;
-  flex-direction: row;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-li {
-  list-style: none;
-}
-
-.image-cover img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-.profile-details li {
-  padding-right: 20px;
-}
-.tags i {
-  padding-right: 10px;
-}
-.profile-details i {
-  padding-right: 10px;
-  padding-top: 16px;
-}
-
-header p {
-  max-width: 600px;
+  background-image: url(./images/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color: #f0f0f0; /* Light gray background */
+  font-family: "Tajawal", serif;
+  font-size: 18px;
+  position: relative; /* Position relative to use pseudo-elements */
   line-height: 1.5;
 }
 
-.avatar {
-  padding-bottom: 8px;
+body::before {
+  content: ""; /* Necessary for pseudo-element */
+  position: absolute; /* Position it over the body */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  right: 0; /* Stretch to the right */
+  bottom: 0; /* Stretch to the bottom */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 1; /* Keep it above the background but below other content */
 }
 
-.avatar img {
-  width: 150px;
-  height: 150px;
-  border-radius: 100%;
-  border: 4px solid black;
-  object-fit: cover;
+.page-container {
+  text-align: center;
+  position: relative; /* Keep content above the overlay */
+  z-index: 3; /* Center text in the container */
+}
+h1 {
+  font-family: "BN_Bergen_StBlack";
+  font-size: 52px;
+  padding: 8px;
+  color: white;
+  letter-spacing: 2px;
 }
 
-.flex-relative {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  margin-top: -95px;
-  padding-bottom: 24px;
-}
-
-.linkedin a {
-  background-color: #2b51ed;
-  padding: 8px 16px;
-  border-radius: 20px;
-}
-
-.linkedin a:hover {
-  color: #2b51ed;
-  background-color: white;
-  border: 1px solid #2b51ed;
-}
-
-.resume {
-  color: black;
-  font-weight: bold;
-}
-
-.resume:hover {
-  text-decoration: solid underline 4px;
-}
-
-main {
-  padding-top: 40px;
-}
-
-main h2 {
+h2 {
   font-size: 24px;
+  padding: 8px;
+  font-weight: 500;
+  color: white;
 }
 
-main h3 {
-  font-size: 18px;
-  font-weight: 600;
+.list a {
+  text-decoration: none;
+  font-family: "Tajawal", serif;
+  font-weight: 500;
+  color: black;
+  cursor: pointer;
+  color: #ff69b4;
+  padding: 0 12px;
+  letter-spacing: 1.5px;
+}
+
+.list a:hover {
   opacity: 0.6;
 }
 
-.card {
-  background: white;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  padding: 18px 24px;
-  margin: 0 auto;
-  flex-direction: column;
-  margin-bottom: 20px;
-  border-radius: 8px;
-}
-
-.card:hover {
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-}
-
-.tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.tags li {
-  padding: 6px 10px;
-  font-size: 11px;
-  border-radius: 4px;
-  background: #ccc;
-}
-
-.card-body img {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  object-fit: fill;
-  padding-top: 20px;
-}
-
-.card-footer {
-  display: flex;
-  justify-content: end;
-  font-size: 14px;
-  padding-top: 12px;
-}
-
-.card-footer a {
-  border-radius: 40px;
-  padding: 6px 12px;
-  transition: all 150ms ease-in-out;
-  background-color: black;
-  color: white;
-  margin-right: 4px;
-}
-
-.card-footer a:hover {
-  color: black;
-  background-color: white;
-  border: 1px solid black;
-}
-.demo-link {
-  position: relative;
-  text-align: center;
-}
-.demo-link-hover {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  background-color: #646464;
-  color: white;
-  border-radius: 40px;
-  padding: 4px 10px;
-  opacity: 0;
-  transition: all 300ms ease-in;
-  white-space: nowrap;
-}
-.demo-link:hover img {
-  opacity: 0.75;
-  filter: grayscale(0.9) blur(1px);
-}
-
-.demo-link:hover .demo-link-hover {
-  opacity: 1;
+.list {
+  font-family: "BN_Bergen_StLight";
+  padding: 8px;
+  margin: 0 15px;
+  text-transform: uppercase;
 }
 
 footer {
-  padding: 20px 0;
+  width: 100%; /* Full width */
+  position: absolute; /* Position it at the bottom */
+  bottom: 0; /* Align to the bottom */
+  text-align: center; /* Center content in footer */
+  color: black; /* White text color */
+  padding: 10px 0; /* Padding for top and bottom */
+  z-index: 2;
 }
 
 footer p {
-  font-size: 12px;
-  text-align: center;
-  padding-top: 16px;
+  margin-top: 10px;
 }
 
-.work-enquiry {
-  text-align: center;
-  margin: 0 auto;
-  padding: 20px 16px 32px;
-  background-color: #d0e0e3;
-  border-radius: 4px;
-}
-
-.work-enquiry h3 {
-  font-size: 24px;
-}
-
-.work-enquiry p {
-  padding: 16px 8px;
-  line-height: 1.5;
-}
-
-.work-enquiry a {
-  color: black;
-  border: 1px solid black;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: all 150ms ease-in-out;
-  cursor: pointer;
-}
-
-.work-enquiry a:hover {
-  color: white;
-  background-color: black;
-}
-
-.card-social {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  padding-top: 24px;
-}
-
-.card-social a {
-  background-color: black;
-  color: white;
-  padding: 8px;
+.social-icons a {
+  padding: 12px 10px 6px;
+  color: #ff69b4;
+  background-color: white;
+  border-radius: 100%;
   margin: 0 6px;
-  border-radius: 40px;
-  text-decoration: none;
-}
-
-.card-social ul {
-  justify-content: center;
-}
-
-.card-social span {
-  display: none;
-  transition: all 50ms ease-in-out;
-}
-.card-social a:hover span {
-  display: inline;
   cursor: pointer;
 }
-#card-social {
-  background-color: #f6f0e9;
-  border: 1px solid black;
-  border-radius: 0;
-}
 
-@media (max-width: 600px) {
-  header {
-    padding: 0;
-  }
-
-  main {
-    padding-top: 16px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .container {
-    padding: 0 20px;
-  }
-  .image-cover img {
-    height: 120px;
-  }
-  .avatar img {
-    width: 100px;
-    height: 100px;
-  }
-  .flex-relative {
-    margin-top: -45px;
-    padding-bottom: 24px;
-  }
-
-  .linkedin {
-    font-size: 14px;
-  }
-
-  .profile-details li {
-    font-size: 11px;
-    padding-right: 10px;
-  }
+.social-icons a:hover {
+  opacity: 0.6;
 }
