@@ -92,7 +92,7 @@ footer {
   position: absolute; /* Position it at the bottom */
   bottom: 0; /* Align to the bottom */
   text-align: center; /* Center content in footer */
-  color: black; /* White text color */
+  color: white; /* White text color */
   padding: 10px 0; /* Padding for top and bottom */
   z-index: 2;
 }
