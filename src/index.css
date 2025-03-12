@@ -1,7 +1,13 @@
+/* === FONT & GLOBAL STYLES === */
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #f8fafb;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
 }
+
+/* === LAYOUT === */
 .container {
   max-width: 960px;
   margin: 0 auto;
@@ -10,41 +16,57 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  gap: 10px;
 }
 
+/* === TYPOGRAPHY === */
 h1,
 h2,
 h3,
 h4,
 p {
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
 }
 
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+/* === HEADER === */
 header {
   padding: 0 60px;
 }
 
-header h1 {
-  font-size: 32px;
-  font-size: bold;
+header p {
+  max-width: 600px;
 }
+
+/* === NAVIGATION === */
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: row;
+}
+
+li {
+  list-style: none;
 }
 
 a {
   text-decoration: none;
   color: white;
-}
-
-li {
-  list-style: none;
 }
 
 .link {
@@ -56,26 +78,11 @@ li {
   font-weight: bold;
 }
 
+/* === IMAGE STYLES === */
 .image-cover img {
   width: 100%;
   height: 250px;
   object-fit: cover;
-}
-
-.profile-details li {
-  padding-right: 20px;
-}
-.tags i {
-  padding-right: 10px;
-}
-.profile-details i {
-  padding-right: 10px;
-  padding-top: 16px;
-}
-
-header p {
-  max-width: 600px;
-  line-height: 1.5;
 }
 
 .avatar {
@@ -85,11 +92,23 @@ header p {
 .avatar img {
   width: 150px;
   height: 150px;
-  border-radius: 100%;
+  border-radius: 50%;
   border: 4px solid black;
   object-fit: cover;
 }
 
+/* === PROFILE DETAILS === */
+.profile-details li,
+.tags i,
+.profile-details i {
+  padding-right: 10px;
+}
+
+.profile-details i {
+  padding-top: 16px;
+}
+
+/* === FLEXIBLE HEADER CONTENT === */
 .flex-relative {
   display: flex;
   justify-content: space-between;
@@ -98,10 +117,12 @@ header p {
   padding-bottom: 24px;
 }
 
+/* === BUTTONS === */
 .linkedin a {
   background-color: #2b51ed;
   padding: 8px 16px;
   border-radius: 20px;
+  transition: 0.3s;
 }
 
 .linkedin a:hover {
@@ -116,21 +137,12 @@ header p {
 }
 
 .resume:hover {
-  text-decoration: solid underline 4px;
+  text-decoration: underline solid 4px;
 }
 
+/* === MAIN CONTENT === */
 main {
   padding-top: 40px;
-}
-
-main h2 {
-  font-size: 24px;
-}
-
-main h3 {
-  font-size: 18px;
-  font-weight: 600;
-  opacity: 0.6;
 }
 
 .card {
@@ -138,11 +150,11 @@ main h3 {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  padding: 18px 24px;
-  margin: 0 auto;
   flex-direction: column;
+  padding: 18px 24px;
   margin-bottom: 20px;
   border-radius: 8px;
+  transition: 0.3s;
 }
 
 .card:hover {
@@ -150,6 +162,7 @@ main h3 {
   border: 1px solid #ccc;
 }
 
+/* === TAGS === */
 .tags {
   display: flex;
   gap: 8px;
@@ -163,6 +176,7 @@ main h3 {
   background: #ccc;
 }
 
+/* === CARD MEDIA === */
 .card-body img {
   width: 100%;
   max-width: 600px;
@@ -171,6 +185,7 @@ main h3 {
   padding-top: 20px;
 }
 
+/* === CARD FOOTER === */
 .card-footer {
   display: flex;
   justify-content: end;
@@ -181,10 +196,10 @@ main h3 {
 .card-footer a {
   border-radius: 40px;
   padding: 6px 12px;
-  transition: all 150ms ease-in-out;
   background-color: black;
   color: white;
   margin-right: 4px;
+  transition: 0.15s;
 }
 
 .card-footer a:hover {
@@ -192,24 +207,27 @@ main h3 {
   background-color: white;
   border: 1px solid black;
 }
+
+/* === DEMO LINK HOVER EFFECT === */
 .demo-link {
   position: relative;
   text-align: center;
 }
+
 .demo-link-hover {
   position: absolute;
   top: 55%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   background-color: #646464;
   color: white;
   border-radius: 40px;
   padding: 4px 10px;
   opacity: 0;
-  transition: all 300ms ease-in;
+  transition: 0.3s;
   white-space: nowrap;
 }
+
 .demo-link:hover img {
   opacity: 0.75;
   filter: grayscale(0.9) blur(1px);
@@ -219,13 +237,14 @@ main h3 {
   opacity: 1;
 }
 
+/* === FOOTER === */
 .footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 300px; /* Adjust the height as needed */
-  background-color: #f8f8f8; /* Background color */
+  height: 300px;
+  background-color: #f8f8f8;
   border: 1px solid black;
   text-align: center;
 }
@@ -234,43 +253,46 @@ main h3 {
   margin: 0;
 }
 
+/* === FOOTER LINKS === */
 .footer-links {
-  display: flex; /* Arrange links in a row */
-  justify-content: space-around; /* Space evenly across the container */
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
-  margin-top: 16px; /* Space between the heading and links */
-  width: 100%; /* Full width */
-  max-width: 600px; /* You can adjust this to fit your layout */
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .footer a {
-  margin: 10px; /* Uniform margin between buttons */
+  margin: 10px;
   text-decoration: none;
-  color: black; /* Link color */
-  font-size: 20px; /* Icon size */
+  color: black;
+  font-size: 20px;
   border: 1px solid black;
-  padding: 12px; /* Same padding for top, right, bottom, and left */
-  flex: 1; /* Allow buttons to grow equally */
-  text-align: center; /* Center the text within the button */
-  border-radius: 5px; /* Rounded corners for a button look */
-  background-color: white; /* Background color of the button */
-  transition: background-color 0.3s; /* Smooth transition for hover effect */
-  box-sizing: border-box; /* Include padding/border in the element's total width */
+  padding: 12px;
+  flex: 1;
+  text-align: center;
+  border-radius: 5px;
+  background-color: white;
+  transition: 0.3s;
+  box-sizing: border-box;
 }
 
-/* Hover effect for buttons */
 .footer a:hover {
-  background-color: black; /* Background color on hover */
-  color: white; /* Text color on hover */
+  background-color: black;
+  color: white;
 }
+
 .footer a .icon {
-  margin-right: 10px; /* Space between icon and text */
+  margin-right: 10px;
 }
 
 .designer {
   text-align: center;
-  margin: 20px 0; /* Space above and below the designer text */
+  margin: 20px 0;
 }
+
+/* === RESPONSIVE DESIGN === */
 @media (max-width: 600px) {
   header {
     padding: 0;
@@ -287,13 +309,16 @@ main h3 {
   .container {
     padding: 0 20px;
   }
+
   .image-cover img {
     height: 120px;
   }
+
   .avatar img {
     width: 100px;
     height: 100px;
   }
+
   .flex-relative {
     margin-top: -45px;
     padding-bottom: 24px;
@@ -309,13 +334,40 @@ main h3 {
   }
 
   .footer-links {
-    flex-direction: column; /* Stack links vertically */
-    align-items: stretch; /* Make buttons stretch to full width */
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .footer a {
-    width: 100%; /* Full width on mobile */
-    margin: 5px 0; /* Margin for vertical spacing */
-    padding: 12px; /* Ensure padding is the same for all sides */
+    width: 100%;
+    margin: 5px 0;
+    padding: 12px;
   }
+}
+/* Filter Buttons */
+.filter-buttons {
+  margin: 20px 0;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  background: transparent;
+  color: black;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #ff3e6c;
+  border-color: #ff3e6c;
+}
+.hidden {
+  display: none; /* Completely removes from layout */
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
