@@ -29,9 +29,12 @@ body {
 .breadcrumb h4:hover {
   text-decoration: underline;
 }
-section,
-.section {
-  padding: 5px 0;
+section {
+  background-color: white;
+  padding: 24px;
+  border-radius: 24px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
 }
 h1 {
   font-size: 32px;
