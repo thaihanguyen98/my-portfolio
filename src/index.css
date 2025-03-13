@@ -11,11 +11,13 @@ body {
 .container {
   max-width: 960px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
+/* Responsive Grid */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adaptive */
   gap: 10px;
 }
 
@@ -58,6 +60,7 @@ ul {
   padding: 0;
   margin: 0;
   display: flex;
+  flex-wrap: wrap; /* Makes navigation responsive */
 }
 
 li {
@@ -108,6 +111,10 @@ a {
   padding-top: 16px;
 }
 
+.profile-details {
+  margin-bottom: 30px; /* Adds space below the profile details */
+}
+
 /* === FLEXIBLE HEADER CONTENT === */
 .flex-relative {
   display: flex;
@@ -115,6 +122,7 @@ a {
   align-items: end;
   margin-top: -95px;
   padding-bottom: 24px;
+  flex-wrap: wrap; /* Prevents breaking on small screens */
 }
 
 /* === BUTTONS === */
@@ -292,82 +300,175 @@ main {
   margin: 20px 0;
 }
 
-/* === RESPONSIVE DESIGN === */
+/* === RESPONSIVE FILTER BUTTONS === */
+.filter-buttons {
+  display: flex;
+  justify-content: flex-start; /* Aligned to the far left */
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: black;
+  margin-top: 50px; /* Ensures 50px top margin */
+  width: 100%;
+  max-width: 1200px;
+  overflow-x: auto; /* Allows horizontal scroll if needed */
+  white-space: nowrap;
+}
+
+/* Individual filter items */
+.filter-btn {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Dot separator */
+.dot {
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* Active and hover states */
+.filter-btn.active {
+  font-weight: bold;
+  color: black;
+}
+
+.filter-btn:hover {
+  color: #ff3e6c;
+}
+
+/* Responsive adjustments */
 @media (max-width: 600px) {
+  .filter-buttons {
+    justify-content: flex-start; /* Ensure far left alignment */
+    width: 100%;
+    overflow-x: auto; /* Prevents wrapping */
+  }
+}
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  /* Responsive Typography */
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3,
+  p {
+    font-size: 16px;
+  }
+
+  /* Header Padding */
   header {
-    padding: 0;
+    padding: 0 20px;
   }
 
-  main {
-    padding-top: 16px;
-  }
-
+  /* Adjust Grid for Smaller Screens */
   .grid {
     grid-template-columns: 1fr;
   }
 
-  .container {
-    padding: 0 20px;
+  /* Mobile Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .image-cover img {
-    height: 120px;
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    padding-top: 10px;
   }
 
   .avatar img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
 
-  .flex-relative {
-    margin-top: -45px;
-    padding-bottom: 24px;
+  /* Responsive Filter Buttons */
+  .filter-buttons {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+    width: 100%;
   }
 
-  .linkedin {
-    font-size: 14px;
+  /* Responsive Cards */
+  .card {
+    padding: 14px 18px;
   }
 
-  .profile-details li {
-    font-size: 11px;
-    padding-right: 10px;
+  /* Footer Adjustments */
+  .footer {
+    padding: 20px;
+    height: auto;
   }
 
   .footer-links {
     flex-direction: column;
-    align-items: stretch;
-  }
-
-  .footer a {
-    width: 100%;
-    margin: 5px 0;
-    padding: 12px;
+    align-items: center;
   }
 }
-/* Filter Buttons */
+
+/* Header Container with Filters */
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Ensures both header & filters are in one line */
+  align-items: center; /* Vertically aligns items */
+  width: 100%;
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto; /* Centers the header */
+  padding: 20px 40px; /* Adjust padding */
+}
+
+/* Filter Buttons (Aligned with Header) */
 .filter-buttons {
-  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between buttons */
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
 }
 
+/* Individual filter items */
 .filter-btn {
-  padding: 10px 20px;
-  background: transparent;
-  color: black;
-  border: 1px solid black;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin: 5px;
-  border-radius: 5px;
+  transition: color 0.3s ease;
 }
 
-.filter-btn:hover,
-.filter-btn.active {
-  background: #ff3e6c;
-  border-color: #ff3e6c;
+/* Dot separator */
+.dot {
+  color: #aaa;
+  font-size: 14px;
 }
-.hidden {
-  display: none; /* Completely removes from layout */
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+
+/* Active & Hover States */
+.filter-btn.active {
+  font-weight: bold;
+  color: black;
+}
+
+.filter-btn:hover {
+  color: #ff3e6c;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column; /* Stack on smaller screens */
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .filter-buttons {
+    width: 100%;
+    overflow-x: auto; /* Allow scrolling if needed */
+  }
 }
