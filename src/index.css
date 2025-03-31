@@ -17,7 +17,7 @@ body {
 /* Responsive Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adaptive */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adaptive */
   gap: 10px;
 }
 
@@ -51,7 +51,7 @@ header {
 }
 
 header p {
-  max-width: 600px;
+  max-width: 1000px;
 }
 
 /* === NAVIGATION === */
